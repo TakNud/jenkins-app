@@ -14,7 +14,6 @@ pipeline {
     // triggers {
     //     githubPush()
     // }
-
     stages {
         stage('Clean Workspace') {
             steps {
