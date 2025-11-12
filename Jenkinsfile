@@ -9,16 +9,16 @@ pipeline {
         APP_PORT        = "5000"
     }
 
-    triggers {
-        githubPush()
-    }
+    // triggers {
+    //     githubPush()
+    // }
     stages {
-        stage('Clone Repository (git CLI)') {
-            steps {
-                echo "Cloning public repository with git CLI..."
-                git branch: "${GIT_BRANCH}", url: "${GIT_REPO_URL}"
-            }
-        }
+        // stage('Clone Repository (git CLI)') {
+        //     steps {
+        //         echo "Cloning public repository with git CLI..."
+        //         git branch: "${GIT_BRANCH}", url: "${GIT_REPO_URL}"
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
