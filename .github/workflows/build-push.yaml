@@ -39,10 +39,11 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
+          cat ~/.ssh/config
 
       - name: Deploy Docker Container
         run: |
-          ssh -i ~/.ssh/id_rsa ubuntu@3.84.79.208 << 'EOF'
+          ssh -i ~/.ssh/id_rsa ubuntu@3.84.79.208
             docker pull ${{env.DOCKER_IMAGE}}:latest
             docker stop my-jenkins-app || true
             docker rm my-jenkins-app || true
