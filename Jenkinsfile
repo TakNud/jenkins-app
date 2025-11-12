@@ -11,9 +11,9 @@ pipeline {
         APP_PORT        = "5000"
     }
 
-    triggers {
-        githubPush()
-    }
+    // triggers {
+    //     githubPush()
+    // }
 
     stages {
         stage('Clean Workspace') {
