@@ -62,6 +62,13 @@ pipeline {
                 """
             }
         }
+        stage('Docker Logs') {
+            steps {
+                sh """
+                  docker logs my-jenkins-app
+                """
+            }
+        }
     }
 
     post {
