@@ -58,7 +58,7 @@ pipeline {
                   docker stop my-jenkins-app || true
                   docker rm my-jenkins-app || true
 
-                  docker run -d --name my-jenkins-app -p 8080:${APP_PORT} ${DOCKER_IMAGE}:latest
+                  docker run -d --name my-jenkins-app -p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}:latest
                 """
             }
         }
